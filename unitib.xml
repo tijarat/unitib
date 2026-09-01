@@ -20,6 +20,9 @@
     	<b:include name='head-content'/>
    		<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css' rel='stylesheet'/>
 		<!-- Template Style CSS -->
+      	<script>
+        	document.addEventListener(&quot;DOMContentLoaded&quot;,function(){document.querySelectorAll(&quot;#blogazine-pro-main-menu-nav a[data-text]&quot;).forEach(function(a){if(/[\u0600-\u06FF]/.test(a.textContent)){a.classList.add(&quot;rtl-menu-text&quot;)}})});
+        </script>
 		<b:if cond='!data:view.isLayoutMode'>
 			<b:skin version='1.0.0'><![CDATA[/*
 -----------------------------------------------
@@ -3442,7 +3445,19 @@ a.ads-here:hover{color:rgba(155,155,155,0.65)}
 	{
 		#slide-menu{width:100%}
 	}
+	
 	.widget-content > article.popular-post .entry-header > h2.entry-title > a{font-family:"Lateef",sans-serif!important;line-height:1.2}
+	article h2{font-family:system-ui,sans-serif;text-align:justify;font-family:"Aref Ruqaa Ink",sans-serif!important;}
+article p{font-family:system-ui,sans-serif;text-align:justify;font-family:"Lateef",sans-serif!important;}
+
+	#blogazine-pro-main-menu-nav a.rtl-menu-text
+	{
+		font-family:'Gulzar',sans-serif!important;
+		font-size:20px!important;
+		line-height:1.8!important;
+		margin-top:7px
+	}
+
 	.entry-title-link{font-family:"Noto Nastaliq Urdu",sans-serif!important;letter-spacing:0!important;font-kerning:normal!important;
 }
 			
@@ -4828,13 +4843,17 @@ body#layout:after{content:'Design by unitib.com';display:block;font-family:Robot
         <b:section class='main-navbar-menu' id='main-navbar-menu' maxwidgets='1' name='Topbar Menu' showaddelement='yes'>
           <b:widget id='LinkList160' locked='true' title='' type='LinkList' visible='true'>
             <b:widget-settings>
+              <b:widget-setting name='link-3'>/p/disclaimer-terms.html</b:widget-setting>
               <b:widget-setting name='sorting'>NONE</b:widget-setting>
+              <b:widget-setting name='link-4'>/p/contact-us.html</b:widget-setting>
               <b:widget-setting name='text-1'>About</b:widget-setting>
               <b:widget-setting name='link-1'>https://unitib,.com</b:widget-setting>
               <b:widget-setting name='text-0'>Home</b:widget-setting>
               <b:widget-setting name='link-2'>https://unitib.com</b:widget-setting>
+              <b:widget-setting name='text-3'>Medical Disclaimer</b:widget-setting>
               <b:widget-setting name='link-0'>/</b:widget-setting>
               <b:widget-setting name='text-2'>Contact Us</b:widget-setting>
+              <b:widget-setting name='text-4'>Contact Us</b:widget-setting>
             </b:widget-settings>
             <b:includable id='main' var='this'>
       <b:include name='widget-title'/>
@@ -4970,7 +4989,7 @@ body#layout:after{content:'Design by unitib.com';display:block;font-family:Robot
                     <b:widget-setting name='link-14'>https://www.unitib.com</b:widget-setting>
                     <b:widget-setting name='link-11'>#</b:widget-setting>
                     <b:widget-setting name='link-10'>https://www.unitib.com</b:widget-setting>
-                    <b:widget-setting name='text-9'>Documentation</b:widget-setting>
+                    <b:widget-setting name='text-9'>ذرائے ابلاغ</b:widget-setting>
                     <b:widget-setting name='link-9'>#</b:widget-setting>
                     <b:widget-setting name='text-8'>_Error Page</b:widget-setting>
                     <b:widget-setting name='link-7'>https://www.unitib.com</b:widget-setting>
@@ -4979,18 +4998,18 @@ body#layout:after{content:'Design by unitib.com';display:block;font-family:Robot
                     <b:widget-setting name='link-6'>https://unitib.com</b:widget-setting>
                     <b:widget-setting name='link-3'>#</b:widget-setting>
                     <b:widget-setting name='link-4'>#</b:widget-setting>
-                    <b:widget-setting name='text-1'>Features</b:widget-setting>
+                    <b:widget-setting name='text-1'>خصوصیات</b:widget-setting>
                     <b:widget-setting name='text-0'>Home</b:widget-setting>
-                    <b:widget-setting name='text-3'>__DropDown 1</b:widget-setting>
-                    <b:widget-setting name='text-2'>_Multi DropDown</b:widget-setting>
-                    <b:widget-setting name='text-5'>__DropDown 3</b:widget-setting>
-                    <b:widget-setting name='text-4'>__DropDown 2</b:widget-setting>
-                    <b:widget-setting name='text-7'>_Sitemap</b:widget-setting>
-                    <b:widget-setting name='text-6'>_Shortcodes</b:widget-setting>
-                    <b:widget-setting name='text-11'>_Video</b:widget-setting>
-                    <b:widget-setting name='text-12'>Download This Template</b:widget-setting>
-                    <b:widget-setting name='text-13'>_Video</b:widget-setting>
-                    <b:widget-setting name='text-14'>Download This Template</b:widget-setting>
+                    <b:widget-setting name='text-3'>__طبی ذخائر</b:widget-setting>
+                    <b:widget-setting name='text-2'>_کنز المفردات</b:widget-setting>
+                    <b:widget-setting name='text-5'>__کنز المرکبات</b:widget-setting>
+                    <b:widget-setting name='text-4'>__کشتہ جات</b:widget-setting>
+                    <b:widget-setting name='text-7'>_نسخہ کیمیاء</b:widget-setting>
+                    <b:widget-setting name='text-6'>_معمولات شیرانی</b:widget-setting>
+                    <b:widget-setting name='text-11'>_اکسیرات</b:widget-setting>
+                    <b:widget-setting name='text-12'>کتابیں پڑھیں</b:widget-setting>
+                    <b:widget-setting name='text-13'>_طبی مشورے</b:widget-setting>
+                    <b:widget-setting name='text-14'>مزید معلومات</b:widget-setting>
                   </b:widget-settings>
                   <b:includable id='main' var='this'>
       <b:include name='widget-title'/>
