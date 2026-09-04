@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
-<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:templateVersion='1.0.0' expr:class='data:blog.languageDirection' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:templateVersion='1.0.0' expr:class='data:blog.languageDirection' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale.language' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
 	<b:attr cond='data:skin.vars.darkmode == &quot;1px&quot;' name='data-theme' value='dark'/>
 	<head>
     	<meta content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1' name='viewport'/>
@@ -238,7 +238,7 @@ Author Url:  https://www.unitib.com/
 --body-font:$(main.font.family);
 --title-font:$(title.font.family);
 --meta-font:$(meta.font.family);
---text-font:$(text.font.family);
+--text-font: system-ui, -apple-system, "Segoe UI", sans-serif;
 --body-bg-color:$(body.background.color);
 --body-bg:$(body.background);
 --outer-bg:$(outer.bg);
@@ -612,8 +612,13 @@ button,input,select,textarea{
     line-height: 1.5em;
     margin: 5px 0 0;
 }
- .excerpt{
-    font-family:var(--text-font)
+
+.excerpt 
+{
+    font-family: var(--text-font);
+    font-size: 15px !important;
+    text-align: justify !important;
+    font-weight: bold;
 }
  .entry-category{
     position:absolute;
@@ -2322,6 +2327,7 @@ blockquote:after,.rtl blockquote:before{content:'\f10e';margin:0 0 0 10px}
  .show-hidden li.reddit,.show-hidden li.linkedin,.show-hidden li.vk,.show-hidden li.telegram{
     display:inline-block
 }
+
  .about-author{
     position:relative;
     float:left;
@@ -2329,6 +2335,7 @@ blockquote:after,.rtl blockquote:before{content:'\f10e';margin:0 0 0 10px}
     box-sizing:border-box;
     padding:20px;
     margin:25px 0 0;
+	text-align: start;
     border:1px solid var(--border-color)
 }
  .about-author .avatar-container{
@@ -2371,6 +2378,37 @@ blockquote:after,.rtl blockquote:before{content:'\f10e';margin:0 0 0 10px}
     color:var(--title-hover-color);
     text-decoration:none
 }
+
+html[dir="rtl"] article section #about-author {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir="ltr"] article section #about-author {
+  direction: ltr;
+  text-align: left;
+}
+
+html[dir="rtl"] article section #about-author img {
+  float: right;
+  margin: 0 0 0 15px;
+}
+
+html[dir="ltr"] article section #about-author img {
+  float: left;
+  margin: 0 15px 0 0;
+}
+
+
+
+
+
+
+
+
+
+
+
  .author-description{
     overflow:hidden
 }
@@ -3447,8 +3485,7 @@ a.ads-here:hover{color:rgba(155,155,155,0.65)}
 	}
 	
 	.widget-content > article.popular-post .entry-header > h2.entry-title > a{font-family:"Lateef",sans-serif!important;line-height:1.2}
-	article h2{font-family:system-ui,sans-serif;text-align:justify;font-family:"Aref Ruqaa Ink",sans-serif!important;}
-article p{font-family:system-ui,sans-serif;text-align:justify;font-family:"Lateef",sans-serif!important;}
+
 
 	#blogazine-pro-main-menu-nav a.rtl-menu-text
 	{
@@ -3458,7 +3495,183 @@ article p{font-family:system-ui,sans-serif;text-align:justify;font-family:"Latee
 		margin-top:7px
 	}
 
-	.entry-title-link{font-family:"Noto Nastaliq Urdu",sans-serif!important;letter-spacing:0!important;font-kerning:normal!important;
+article section 
+{
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+article section img {
+  border: 2px solid #86c98a;
+  --border-radius: 50%;
+  padding: 3px;
+}
+
+article section a 
+{
+  color : #22c55e !important;
+}
+
+article section p label {
+  display: block;
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+}
+
+article section h2 {
+  font-size: 1.0rem;
+  margin: 0.25rem 0 0 0;
+  color: #14532d !important;
+  background: #bef7d6;
+  padding: 0.25rem 0.30rem;
+  border-left: 3px solid #22c55e;
+  border-top: 3px solid #22c55e;
+  border-right: 3px solid #22c55e;
+  border-bottom: 3px solid #22c55e;
+  border-radius: 4px;
+}
+
+article section h3 {
+  font-size: 0.80rem;
+  margin: 0.5rem 0 0 0;
+  color: #166534 !important;
+  background: #daf7e6;
+  padding: 0.0rem 0.65rem;
+  border-bottom: 2px solid #4ade80;
+  border-radius: 10px;
+}
+
+article section p 
+{
+  text-align: justify;
+}
+
+#risk-warning {
+  background: #fff3e0;
+  border: 1px solid #f59e0b;
+  border-left: 5px solid #f59e0b;
+  padding: 0.9rem 1rem;
+  margin: 1rem 0;
+  border-radius: 6px;
+}
+
+#risk-warning h2 {
+  background: transparent;
+  color: #9a4d00 !important;
+  border: 0;
+  padding: 0;
+  margin: 0 0 0.4rem 0;
+}
+
+#risk-warning p {
+  margin: 0;
+  color: #5f3a16;
+}
+
+#about-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #f0fdf4;
+  border: 1px solid #86c98a;
+  border-left: 5px solid #22c55e;
+  padding: 14px;
+  margin: 1rem 0;
+  border-radius: 6px;
+  text-align: justify;
+}
+
+#about-author img {
+  width: 85px;
+  height: 85px;
+  object-fit: cover;
+  border: 2px solid #22c55e;
+  padding: 2px;
+  border-radius: 6px;
+}
+
+#about-author h3 {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 2px 0 5px;
+  font-size: 1rem;
+}
+
+#about-author h3 a {
+  color: #166534 !important;
+  font-weight: 700;
+}
+
+#about-author p {
+  margin: 2px 0 !important;
+  color: #374151;
+  line-height: 1.35;
+}
+
+@media (max-width: 480px) {
+  #about-author {
+    align-items: flex-start;
+  }
+
+  #about-author img {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+#excerpt
+{
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+#references {
+  background: #f0fdf4;
+  border: 1px solid #86c98a;
+  border-left: 5px solid #166534;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 6px;
+}
+
+#references h2 {
+  background: #166534;
+  color: #ffffff !important;
+  border: 0;
+  padding: 0.5rem 0.7rem;
+  margin: 0 0 0.8rem 0;
+  border-radius: 4px;
+}
+
+#references ol {
+  margin: 0;
+  padding-left: 1.4rem;
+}
+
+#references li {
+  margin-bottom: 0.8rem;
+  line-height: 1.45;
+  color: #1f2937;
+}
+
+#references a {
+  color: #15803d !important;
+  font-weight: 600;
+}
+
+#references a:hover {
+  color: #14532d !important;
+  text-decoration: underline;
+}
+#references ol {
+  padding-left: 0;
+  padding-right: 1.4rem;
 }
 			
           ]]></b:skin>
@@ -4727,10 +4940,6 @@ body#layout:after{content:'Design by unitib.com';display:block;font-family:Robot
     </b:includable>
   </b:defaultmarkup>
 </b:defaultmarkups>
-<b:if cond='data:widgets.AdSense.first or data:blog.adsenseClientId'>
-  <!-- Google AdSense -->
-  <script async='async' src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'/>
-</b:if>
 <b:if cond='data:blog.analyticsAccountNumber != &quot;&quot;'>
   <!-- Google Analytics -->
   <b:include data='blog' name='google-analytics'/>
@@ -4843,16 +5052,16 @@ body#layout:after{content:'Design by unitib.com';display:block;font-family:Robot
         <b:section class='main-navbar-menu' id='main-navbar-menu' maxwidgets='1' name='Topbar Menu' showaddelement='yes'>
           <b:widget id='LinkList160' locked='true' title='' type='LinkList' visible='true'>
             <b:widget-settings>
-              <b:widget-setting name='link-3'>/p/disclaimer-terms.html</b:widget-setting>
+              <b:widget-setting name='link-3'>/p/privacy-policy.html</b:widget-setting>
               <b:widget-setting name='sorting'>NONE</b:widget-setting>
               <b:widget-setting name='link-4'>/p/contact-us.html</b:widget-setting>
               <b:widget-setting name='text-1'>About</b:widget-setting>
-              <b:widget-setting name='link-1'>https://unitib,.com</b:widget-setting>
+              <b:widget-setting name='link-1'>/p/about-us.html</b:widget-setting>
               <b:widget-setting name='text-0'>Home</b:widget-setting>
-              <b:widget-setting name='link-2'>https://unitib.com</b:widget-setting>
-              <b:widget-setting name='text-3'>Medical Disclaimer</b:widget-setting>
+              <b:widget-setting name='link-2'>/p/disclaimer-terms.html</b:widget-setting>
+              <b:widget-setting name='text-3'>Privacy Policy</b:widget-setting>
               <b:widget-setting name='link-0'>/</b:widget-setting>
-              <b:widget-setting name='text-2'>Contact Us</b:widget-setting>
+              <b:widget-setting name='text-2'>Medical Disclaimer</b:widget-setting>
               <b:widget-setting name='text-4'>Contact Us</b:widget-setting>
             </b:widget-settings>
             <b:includable id='main' var='this'>
@@ -4951,7 +5160,7 @@ body#layout:after{content:'Design by unitib.com';display:block;font-family:Robot
           <b:section class='header-ads' id='header-ads' maxwidgets='1' name='Header ADS' showaddelement='yes'>
             <b:widget id='HTML14' locked='false' title='Subscribe Us' type='HTML' visible='true'>
               <b:widget-settings>
-                <b:widget-setting name='content'><![CDATA[<a class="ads-here"  href="javascript:;">Responsive Advertisement</a>]]></b:widget-setting>
+                <b:widget-setting name='content'/>
               </b:widget-settings>
               <b:includable id='main'>
       <b:if cond='data:widget.sectionId == &quot;ify-panel&quot;'>
@@ -5054,13 +5263,13 @@ body#layout:after{content:'Design by unitib.com';display:block;font-family:Robot
               <b:widget-setting name='authorLabel'>by</b:widget-setting>
               <b:widget-setting name='showCommentLink'>true</b:widget-setting>
               <b:widget-setting name='style.urlcolor'>#ffffff</b:widget-setting>
-              <b:widget-setting name='showAuthor'>true</b:widget-setting>
+              <b:widget-setting name='showAuthor'>false</b:widget-setting>
               <b:widget-setting name='style.linkcolor'>#ffffff</b:widget-setting>
               <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
               <b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
               <b:widget-setting name='timestampLabel'/>
               <b:widget-setting name='reactionsLabel'/>
-              <b:widget-setting name='showAuthorProfile'>true</b:widget-setting>
+              <b:widget-setting name='showAuthorProfile'>false</b:widget-setting>
               <b:widget-setting name='style.layout'>1x1</b:widget-setting>
               <b:widget-setting name='showLabels'>true</b:widget-setting>
               <b:widget-setting name='showLocation'>false</b:widget-setting>
@@ -5902,22 +6111,22 @@ body#layout:after{content:'Design by unitib.com';display:block;font-family:Robot
             <b:includable id='snippetedPostTitle'><b:comment>Removed :)</b:comment></b:includable>
             <b:includable id='snippetedPosts'><b:comment>Removed :)</b:comment></b:includable>
           </b:widget>
-          <b:widget id='HTML2' locked='false' title='Comments' type='HTML' visible='true'>
+          <b:widget id='HTML2' locked='false' title='Comments' type='HTML' version='2' visible='false'>
             <b:widget-settings>
               <b:widget-setting name='content'>{getWidget} $results={3} $label={comments} $type={list1}</b:widget-setting>
             </b:widget-settings>
             <b:includable id='main'>
-      <b:if cond='data:widget.sectionId == &quot;ify-panel&quot;'>
-        <b:if cond='data:content != &quot;&quot;'>
-          <b:include name='global-variables'/>
-        </b:if>
-        <b:else/>
-        <b:include name='widget-title'/>
-        <div class='widget-content'>
-          <data:content/>
-        </div>
-      </b:if>
-    </b:includable>
+      			<b:if cond='data:widget.sectionId == &quot;ify-panel&quot;'>
+        		<b:if cond='data:content != &quot;&quot;'>
+          			<b:include name='global-variables'/>
+        		</b:if>
+        		<b:else/>
+        		<b:include name='widget-title'/>
+        		<div class='widget-content'>
+          		<data:content/>
+        		</div>
+      			</b:if>	
+    		</b:includable>
           </b:widget>
         </b:section>
         <b:section class='sidebar blogazine-pro-widget-ready' id='sidebar-b' name='Sidebar B' showaddelement='yes'>
@@ -6038,7 +6247,7 @@ body#layout:after{content:'Design by unitib.com';display:block;font-family:Robot
               <b:widget-setting name='shrinkToFit'>false</b:widget-setting>
               <b:widget-setting name='displayWidth'>1600</b:widget-setting>
               <b:widget-setting name='link'>/</b:widget-setting>
-              <b:widget-setting name='caption'><![CDATA[Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.]]></b:widget-setting>
+              <b:widget-setting name='caption'>UniTib ایک معلوماتی بلاگ ہے جہاں آپ کو طب&#1616; یونانی&#1548; حکمت&#1548; جڑی بوٹیوں سے علاج&#1548; صحت مند زندگی کے ٹوٹکے&#1548; قدرتی علاج کے طریقے اور طب یونانی پر کی گئی جدید تحقیق ملے گی&#1748; ہماری کوشش ہے کہ آپ کو مستند اور مفید معلومات فراہم کی جائیں تاکہ آپ قدرتی طریقے سے صحت مند زندگی گزار سکیں&#1748;</b:widget-setting>
             </b:widget-settings>
             <b:includable id='main' var='this'>
       <b:include name='widget-title'/>
@@ -6276,7 +6485,7 @@ body#layout:after{content:'Design by unitib.com';display:block;font-family:Robot
         </b:widget>
       </b:section>
       <b:section class='footer-widget blogazine-pro-widget-ready' id='footer-sec3' maxwidgets='3' name='Section (Right)' showaddelement='yes'>
-        <b:widget id='PopularPosts3' locked='false' title='Bitcoin' type='PopularPosts' visible='true'>
+        <b:widget id='PopularPosts3' locked='false' title='مزید مضامین' type='PopularPosts' visible='true'>
           <b:widget-settings>
             <b:widget-setting name='numItemsToShow'>3</b:widget-setting>
             <b:widget-setting name='showThumbnails'>true</b:widget-setting>
@@ -6381,15 +6590,17 @@ body#layout:after{content:'Design by unitib.com';display:block;font-family:Robot
         <b:section class='footer-menu' id='footer-menu' maxwidgets='1' name='Footer Menu' showaddelement='yes'>
           <b:widget id='LinkList159' locked='true' title='Link List' type='LinkList' visible='true'>
             <b:widget-settings>
-              <b:widget-setting name='link-3'>https://unitib.com</b:widget-setting>
+              <b:widget-setting name='link-3'>/p/disclaimer-terms.html</b:widget-setting>
               <b:widget-setting name='sorting'>NONE</b:widget-setting>
+              <b:widget-setting name='link-4'>/p/contact-us.html</b:widget-setting>
               <b:widget-setting name='text-1'>About</b:widget-setting>
-              <b:widget-setting name='link-1'>https://unitib.com</b:widget-setting>
+              <b:widget-setting name='link-1'>/p/about-us.html</b:widget-setting>
               <b:widget-setting name='text-0'>Home</b:widget-setting>
-              <b:widget-setting name='link-2'>https://unitib.com</b:widget-setting>
-              <b:widget-setting name='text-3'>RTL Version</b:widget-setting>
+              <b:widget-setting name='link-2'>/p/privacy-policy.html</b:widget-setting>
+              <b:widget-setting name='text-3'>Disclaimer</b:widget-setting>
               <b:widget-setting name='link-0'>/</b:widget-setting>
-              <b:widget-setting name='text-2'>Contact</b:widget-setting>
+              <b:widget-setting name='text-2'>Privacy Policy</b:widget-setting>
+              <b:widget-setting name='text-4'>Contact</b:widget-setting>
             </b:widget-settings>
             <b:includable id='main' var='this'>
       <b:include name='widget-title'/>
