@@ -3,7 +3,6 @@
 <html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:templateVersion='1.0.0' expr:class='data:blog.languageDirection' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale.language' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
 	<b:attr cond='data:skin.vars.darkmode == &quot;1px&quot;' name='data-theme' value='dark'/>
 	<head>
-      	<meta content='80A2B87FDB0A727DA6D619E1A06A3CFC' name='msvalidate.01'/>
     	<meta content='width=device-width, initial-scale=1' name='viewport'/>
     	<title><b:eval expr='snippet(data:view.title, {length: 200, links: false, linebreaks: false})'/></title>
     	<link href='//1.bp.blogspot.com' rel='dns-prefetch'/>
@@ -3694,91 +3693,6 @@ article section p
   text-decoration: underline;
   text-underline-offset: 3px;
 }		
-
-/* Improve contrast for metadata displayed on the dark footer */
-#footer-wrapper .entry-meta,
-#footer-wrapper .entry-meta a,
-#footer-wrapper .entry-meta time {
-  color: #d8dde0 !important;
-}
-
-/* Keep the Hakeem note readable if Blogger places it inside the white button */
-.unitib-ftj-button .unitib-ftj-note {
-  color: #24513b !important;
-  border-top-color: rgba(36, 81, 59, 0.3) !important;
-}
-/* Display Font Awesome icons without blocking page text */
-@font-face {
-  font-family: "Font Awesome 6 Free";
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-  src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/webfonts/fa-solid-900.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Font Awesome 6 Free";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/webfonts/fa-regular-400.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Font Awesome 6 Brands";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/webfonts/fa-brands-400.woff2") format("woff2");
-}
-/* Dark mode: keep desktop search controls visible */
-html[data-theme=dark] .search-toggle {
-  background-color: #171921 !important;
-  color: #ffffff !important;
-}
-
-html[data-theme=dark] #nav-search {
-  background-color: #171921 !important;
-}
-
-html[data-theme=dark] #nav-search .search-form {
-  background-color: #2b303c !important;
-}
-
-html[data-theme=dark] #nav-search .search-input,
-html[data-theme=dark] #nav-search .search-input::placeholder,
-html[data-theme=dark] #nav-search .search-action {
-  color: #ffffff !important;
-}
-
-html[data-theme=dark] #nav-search .search-action {
-  opacity: 1 !important;
-}
-
-/* Dark mode: readable post tables */
-html[data-theme=dark] .post-body table {
-  background-color: #213329 !important;
-  border-color: #587362 !important;
-  color: #f2f5f3 !important;
-}
-
-html[data-theme=dark] .post-body table thead,
-html[data-theme=dark] .post-body table thead tr,
-html[data-theme=dark] .post-body table tbody,
-html[data-theme=dark] .post-body table tr {
-  background-color: #213329 !important;
-  color: #f2f5f3 !important;
-}
-
-html[data-theme=dark] .post-body table th,
-html[data-theme=dark] .post-body table td,
-html[data-theme=dark] .post-body table thead th,
-html[data-theme=dark] .post-body table tbody th,
-html[data-theme=dark] .post-body table tbody td {
-  background-color: #213329 !important;
-  border-color: #587362 !important;
-  color: #f2f5f3 !important;
-}
           ]]></b:skin>
 		</b:if>
 		<b:if cond='data:view.isLayoutMode'>
@@ -3959,7 +3873,7 @@ body#layout:after{content:'Design by unitib.com';display:block;font-family:Robot
       <b:if cond='data:widget.sectionId == &quot;blogazine-pro-main-menu&quot;'>
         <ul id='blogazine-pro-main-menu-nav'>
           <b:loop values='data:links' var='link'>
-            <li><a expr:aria-label='data:link.name' expr:data-text='data:link.name' expr:href='data:link.target'><data:link.name/></a></li>
+            <li><a expr:data-text='data:link.name' expr:href='data:link.target'><data:link.name/></a></li>
           </b:loop>
         </ul>
         <b:elseif cond='data:widget.sectionId == &quot;main-navbar-menu&quot;'/>
@@ -4462,7 +4376,14 @@ body#layout:after{content:'Design by unitib.com';display:block;font-family:Robot
       <!-- Load the first homepage thumbnail directly from HTML. -->
       <a class='entry-image-link' expr:aria-label='data:post.title' expr:href='data:post.url'>
         <b:class cond='data:post.featuredImage.isYouTube' name='youtube'/>
-        <img class='unitib-lcp-image' expr:alt='data:post.title' expr:src='data:post.featuredImage.isYouTube ? data:post.featuredImage : resizeImage(data:post.featuredImage, 640)' expr:srcset='data:post.featuredImage.isYouTube ? data:post.featuredImage : resizeImage(data:post.featuredImage, 320) + &quot; 320w, &quot; + resizeImage(data:post.featuredImage, 640) + &quot; 640w&quot;' fetchpriority='high' loading='eager' sizes='(max-width: 680px) 100vw, (max-width: 980px) 33vw, 250px' style='display:block;width:100%;height:100%;object-fit:cover;object-position:center;'/>
+        <img class='unitib-lcp-image'
+             expr:alt='data:post.title'
+             expr:src='data:post.featuredImage.isYouTube ? data:post.featuredImage : resizeImage(data:post.featuredImage, 640)'
+			expr:srcset='data:post.featuredImage.isYouTube ? data:post.featuredImage : resizeImage(data:post.featuredImage, 320) + &quot; 320w, &quot; + resizeImage(data:post.featuredImage, 640) + &quot; 640w, &quot; + resizeImage(data:post.featuredImage, 960) + &quot; 960w&quot;'
+			sizes='(max-width: 680px) 100vw, (max-width: 980px) 33vw, 250px'
+             fetchpriority='high'
+             loading='eager'
+             style='display:block;width:100%;height:100%;object-fit:cover;object-position:center;'/>
       </a>
       <b:else/>
       <b:if cond='data:post.featuredImage'>
@@ -4549,24 +4470,20 @@ body#layout:after{content:'Design by unitib.com';display:block;font-family:Robot
       <!-- Post ShareButtons -->
       <div class='post-share'>
         <ul class='blogazine-pro-share-links social social-bg'>
-  <li class='share-icon'><span aria-hidden='true' class='s-icon'/></li>
-
-  <li class='x-twitter'>
-    <a aria-label='Share on Twitter' class='x-twitter window-ify' data-height='460' data-width='550' expr:data-url='&quot;https://twitter.com/intent/tweet?url=&quot; + data:post.url.canonical + &quot;&amp;text=&quot; + data:post.title' href='javascript:;' rel='nofollow' title='Twitter'/>
-  </li>
-
-  <li class='pinterest-p'>
-    <a aria-label='Share on Pinterest' class='pinterest window-ify' data-height='750' data-width='735' expr:data-url='&quot;https://www.pinterest.com/pin/create/button/?url=&quot; + data:post.url.canonical + &quot;&amp;media=&quot; + data:post.featuredImage + &quot;&amp;description=&quot; + data:post.title' href='javascript:;' rel='nofollow' title='Pinterest'/>
-  </li>
-
-  <li class='linkedin'>
-    <a aria-label='Share on LinkedIn' class='linkedin window-ify' data-height='700' data-width='1000' expr:data-url='&quot;https://www.linkedin.com/shareArticle?url=&quot; + data:post.url.canonical' href='javascript:;' rel='nofollow' title='LinkedIn'/>
-  </li>
-
-  <li class='email'>
-    <a aria-label='Share by email' class='email window-ify' data-height='460' data-width='550' expr:data-url='&quot;mailto:?subject=&quot; + data:post.title + &quot;&amp;body=&quot; + data:post.url.canonical' href='javascript:;' rel='nofollow' title='Email'/>
-  </li>
-</ul>
+          <li class='share-icon'><span class='s-icon'/></li>
+          <li class='facebook-f'><a class='facebook window-ify' data-height='650' data-width='550' expr:data-url='&quot;https://www.facebook.com/sharer.php?u=&quot; + data:post.url.canonical' href='javascript:;' rel='nofollow' title='Facebook'><span><data:messages.share/></span></a></li>
+          <li class='x-twitter'><a class='x-twitter window-ify' data-height='460' data-width='550' expr:data-url='&quot;https://twitter.com/intent/tweet?url=&quot; + data:post.url.canonical + &quot;&amp;text=&quot; + data:post.title' href='javascript:;' rel='nofollow' title='Twitter'/></li>
+          <li class='pinterest-p'><a class='pinterest window-ify' data-height='750' data-width='735' expr:data-url='&quot;https://www.pinterest.com/pin/create/button/?url=&quot; + data:post.url.canonical + &quot;&amp;media=&quot; + data:post.featuredImage + &quot;&amp;description=&quot; + data:post.title' href='javascript:;' rel='nofollow' title='Pinterest'/></li>
+          <li class='whatsapp'><a class='whatsapp window-ify' data-height='550' data-width='900' expr:data-url='&quot;https://api.whatsapp.com/send?text=&quot; + data:post.title + &quot; | &quot; + data:post.url.canonical' href='javascript:;' rel='nofollow' title='WhatsApp'/></li>
+          <li class='reddit'><a class='reddit window-ify' data-height='460' data-width='550' expr:data-url='&quot;https://reddit.com/submit?url=&quot; + data:post.url.canonical + &quot;&amp;title=&quot; + data:post.title' href='javascript:;' rel='nofollow' title='Reddit'/></li>
+          <li class='linkedin'><a class='linkedin window-ify' data-height='700' data-width='1000' expr:data-url='&quot;https://www.linkedin.com/shareArticle?url=&quot; + data:post.url.canonical' href='javascript:;' rel='nofollow' title='LinkedIn'/></li>
+          <li class='vk'><a class='vk window-ify' data-height='430' data-width='655' expr:data-url='&quot;https://vk.com/share.php?url=&quot; + data:post.url.canonical' href='javascript:;' rel='nofollow' title='VK'/></li>
+          <b:if cond='data:blog.isMobileRequest'>
+            <li class='telegram'><a class='telegram window-ify' data-height='460' data-width='550' expr:data-url='&quot;https://telegram.me/share/url?url=&quot; + data:post.url.canonical + &quot;&amp;text=&quot; + data:post.title' href='javascript:;' rel='nofollow' title='Telegram'/></li>
+          </b:if>
+          <li class='email'><a class='email window-ify' data-height='460' data-width='550' expr:data-url='&quot;mailto:?subject=&quot; + data:post.title + &quot;&amp;body=&quot; + data:post.url.canonical' href='javascript:;' rel='nofollow' title='Email'/></li>
+          <li class='show-hid'><a href='javascript:;' rel='nofollow'/></li>
+        </ul>
       </div>
     </b:includable>
     <b:includable id='postTimestamp' var='post'>
@@ -4973,7 +4890,7 @@ body#layout:after{content:'Design by unitib.com';display:block;font-family:Robot
     <b:includable id='content'>
       <b:if cond='data:widget.sectionId == &quot;footer-about-section&quot;'>
         <a class='footer-logo custom-image' expr:href='data:blog.homepageUrl'>
-          <img expr:alt='data:blog.title' expr:id='data:widget.instanceId + &quot;_img&quot;' expr:src='resizeImage(data:sourceUrl, 220)' height='90' loading='lazy' width='220'/>
+          <img expr:alt='data:blog.title' expr:id='data:widget.instanceId + &quot;_img&quot;' expr:src='data:sourceUrl' height='654' width='1600'/>
         </a>
         <b:if cond='data:caption'>
           <p class='image-caption excerpt'><data:caption/></p>
@@ -5353,11 +5270,11 @@ body#layout:after{content:'Design by unitib.com';display:block;font-family:Robot
                 </b:widget>
               </b:section>
               <b:tag aria-label='روشن یا تاریک موڈ تبدیل کریں' class='darkmode-toggle' cond='data:skin.vars.darkmode == &quot;0px&quot;' href='javascript:;' name='a'/>
-              <a aria-label='تلاش کھولیں یا بند کریں' class='search-toggle' href='javascript:;'/>
+              <a class='search-toggle' href='javascript:;'/>
               <div id='nav-search'>
                 <form class='search-form' expr:action='data:blog.searchUrl' role='search'>
                   <input autocomplete='off' class='search-input' expr:placeholder='data:messages.search' name='q' value=''/>
-                  <button aria-label='تلاش کریں' class='search-action' type='submit' value=''/>
+                  <button class='search-action' type='submit' value=''/>
                 </form>
               </div>
             </div>
@@ -5741,12 +5658,19 @@ body#layout:after{content:'Design by unitib.com';display:block;font-family:Robot
         <span class='entry-comments-link'><data:post.numberOfComments/></span>
       </b:if>
     </b:includable>
-            <b:includable id='postFeaturedImage' var='post'>
+<b:includable id='postFeaturedImage' var='post'>
   <div class='entry-image'>
     <b:if cond='data:view.isHomepage and data:i == 0 and data:post.featuredImage'>
       <a class='entry-image-link' expr:aria-label='data:post.title' expr:href='data:post.url'>
         <b:class cond='data:post.featuredImage.isYouTube' name='youtube'/>
-        <img class='unitib-lcp-image' expr:alt='data:post.title' expr:src='data:post.featuredImage.isYouTube ? data:post.featuredImage : resizeImage(data:post.featuredImage, 640)' expr:srcset='data:post.featuredImage.isYouTube ? data:post.featuredImage : resizeImage(data:post.featuredImage, 320) + &quot; 320w, &quot; + resizeImage(data:post.featuredImage, 640) + &quot; 640w&quot;' fetchpriority='high' loading='eager' sizes='(max-width: 680px) 100vw, (max-width: 980px) 33vw, 250px' style='display:block;width:100%;height:100%;object-fit:cover;object-position:center;'/>
+        <img class='unitib-lcp-image'
+             expr:alt='data:post.title'
+             expr:src='data:post.featuredImage.isYouTube ? data:post.featuredImage : resizeImage(data:post.featuredImage, 640)'
+expr:srcset='data:post.featuredImage.isYouTube ? data:post.featuredImage : resizeImage(data:post.featuredImage, 320) + &quot; 320w, &quot; + resizeImage(data:post.featuredImage, 640) + &quot; 640w, &quot; + resizeImage(data:post.featuredImage, 960) + &quot; 960w&quot;'
+sizes='(max-width: 680px) 100vw, (max-width: 980px) 33vw, 250px'			 
+             fetchpriority='high'
+             loading='eager'
+             style='display:block;width:100%;height:100%;object-fit:cover;object-position:center;'/>
       </a>
       <b:else/>
       <b:if cond='data:post.featuredImage'>
@@ -5831,24 +5755,20 @@ body#layout:after{content:'Design by unitib.com';display:block;font-family:Robot
       <!-- Post ShareButtons -->
       <div class='post-share'>
         <ul class='blogazine-pro-share-links social social-bg'>
-  <li class='share-icon'><span aria-hidden='true' class='s-icon'/></li>
-
-  <li class='x-twitter'>
-    <a aria-label='Share on Twitter' class='x-twitter window-ify' data-height='460' data-width='550' expr:data-url='&quot;https://twitter.com/intent/tweet?url=&quot; + data:post.url.canonical + &quot;&amp;text=&quot; + data:post.title' href='javascript:;' rel='nofollow' title='Twitter'/>
-  </li>
-
-  <li class='pinterest-p'>
-    <a aria-label='Share on Pinterest' class='pinterest window-ify' data-height='750' data-width='735' expr:data-url='&quot;https://www.pinterest.com/pin/create/button/?url=&quot; + data:post.url.canonical + &quot;&amp;media=&quot; + data:post.featuredImage + &quot;&amp;description=&quot; + data:post.title' href='javascript:;' rel='nofollow' title='Pinterest'/>
-  </li>
-
-  <li class='linkedin'>
-    <a aria-label='Share on LinkedIn' class='linkedin window-ify' data-height='700' data-width='1000' expr:data-url='&quot;https://www.linkedin.com/shareArticle?url=&quot; + data:post.url.canonical' href='javascript:;' rel='nofollow' title='LinkedIn'/>
-  </li>
-
-  <li class='email'>
-    <a aria-label='Share by email' class='email window-ify' data-height='460' data-width='550' expr:data-url='&quot;mailto:?subject=&quot; + data:post.title + &quot;&amp;body=&quot; + data:post.url.canonical' href='javascript:;' rel='nofollow' title='Email'/>
-  </li>
-</ul>
+          <li class='share-icon'><span class='s-icon'/></li>
+          <li class='facebook-f'><a class='facebook window-ify' data-height='650' data-width='550' expr:data-url='&quot;https://www.facebook.com/sharer.php?u=&quot; + data:post.url.canonical' href='javascript:;' rel='nofollow' title='Facebook'><span><data:messages.share/></span></a></li>
+          <li class='x-twitter'><a class='x-twitter window-ify' data-height='460' data-width='550' expr:data-url='&quot;https://twitter.com/intent/tweet?url=&quot; + data:post.url.canonical + &quot;&amp;text=&quot; + data:post.title' href='javascript:;' rel='nofollow' title='Twitter'/></li>
+          <li class='pinterest-p'><a class='pinterest window-ify' data-height='750' data-width='735' expr:data-url='&quot;https://www.pinterest.com/pin/create/button/?url=&quot; + data:post.url.canonical + &quot;&amp;media=&quot; + data:post.featuredImage + &quot;&amp;description=&quot; + data:post.title' href='javascript:;' rel='nofollow' title='Pinterest'/></li>
+          <li class='whatsapp'><a class='whatsapp window-ify' data-height='550' data-width='900' expr:data-url='&quot;https://api.whatsapp.com/send?text=&quot; + data:post.title + &quot; | &quot; + data:post.url.canonical' href='javascript:;' rel='nofollow' title='WhatsApp'/></li>
+          <li class='reddit'><a class='reddit window-ify' data-height='460' data-width='550' expr:data-url='&quot;https://reddit.com/submit?url=&quot; + data:post.url.canonical + &quot;&amp;title=&quot; + data:post.title' href='javascript:;' rel='nofollow' title='Reddit'/></li>
+          <li class='linkedin'><a class='linkedin window-ify' data-height='700' data-width='1000' expr:data-url='&quot;https://www.linkedin.com/shareArticle?url=&quot; + data:post.url.canonical' href='javascript:;' rel='nofollow' title='LinkedIn'/></li>
+          <li class='vk'><a class='vk window-ify' data-height='430' data-width='655' expr:data-url='&quot;https://vk.com/share.php?url=&quot; + data:post.url.canonical' href='javascript:;' rel='nofollow' title='VK'/></li>
+          <b:if cond='data:blog.isMobileRequest'>
+            <li class='telegram'><a class='telegram window-ify' data-height='460' data-width='550' expr:data-url='&quot;https://telegram.me/share/url?url=&quot; + data:post.url.canonical + &quot;&amp;text=&quot; + data:post.title' href='javascript:;' rel='nofollow' title='Telegram'/></li>
+          </b:if>
+          <li class='email'><a class='email window-ify' data-height='460' data-width='550' expr:data-url='&quot;mailto:?subject=&quot; + data:post.title + &quot;&amp;body=&quot; + data:post.url.canonical' href='javascript:;' rel='nofollow' title='Email'/></li>
+          <li class='show-hid'><a href='javascript:;' rel='nofollow'/></li>
+        </ul>
       </div>
     </b:includable>
             <b:includable id='postTimestamp' var='post'>
@@ -6167,14 +6087,13 @@ body#layout:after{content:'Design by unitib.com';display:block;font-family:Robot
     aria-label="Open registered Hakeem verification"
   >
  Verify a Hakeem
-  
+  </a>
 
   <p class="unitib-ftj-note">
     For current official status, confirmation with the National Council for
     Tibb may also be required.
   </p>
-</a
-></aside
+</aside
 >]]></b:widget-setting>
             </b:widget-settings>
             <b:includable id='main'>
@@ -6395,7 +6314,7 @@ body#layout:after{content:'Design by unitib.com';display:block;font-family:Robot
           </b:widget>
         </b:section>
         <b:section class='sidebar blogazine-pro-widget-ready' id='sidebar-b' name='Sidebar B' showaddelement='yes'>
-          <b:widget id='FeaturedPost1' locked='false' title='Featured Post' type='FeaturedPost' version='2' visible='true'>
+          <b:widget id='FeaturedPost1' locked='false' title='Featured Post' type='FeaturedPost' visible='true'>
             <b:widget-settings>
               <b:widget-setting name='showSnippet'>true</b:widget-setting>
               <b:widget-setting name='showPostTitle'>true</b:widget-setting>
@@ -6431,7 +6350,7 @@ body#layout:after{content:'Design by unitib.com';display:block;font-family:Robot
               </a>
             </b:if>
             <b:else/>
-            <a class='entry-image-link before-mask' expr:aria-label='data:post.title' expr:href='data:post.url'>
+            <a class='entry-image-link before-mask' expr:href='data:post.url'>
               <span class='entry-thumb' data-image='https://4.bp.blogspot.com/-eALXtf-Ljts/WrQYAbzcPUI/AAAAAAAABjY/vptx-N2H46oFbiCqbSe2JgVSlHhyl0MwQCK4BGAYYCw/s72-c/nth-ify.png'/>
             </a>
           </b:if>
@@ -6521,7 +6440,7 @@ body#layout:after{content:'Design by unitib.com';display:block;font-family:Robot
             <b:includable id='content'>
       <b:if cond='data:widget.sectionId == &quot;footer-about-section&quot;'>
         <a class='footer-logo custom-image' expr:href='data:blog.homepageUrl'>
-          <img expr:alt='data:blog.title' expr:id='data:widget.instanceId + &quot;_img&quot;' expr:src='resizeImage(data:sourceUrl, 220)' height='90' loading='lazy' width='220'/>
+          <img expr:alt='data:blog.title' expr:id='data:widget.instanceId + &quot;_img&quot;' expr:src='data:sourceUrl' height='654' width='1600'/>
         </a>
         <b:if cond='data:caption'>
           <p class='image-caption excerpt'><data:caption/></p>
@@ -6950,7 +6869,7 @@ $("\u0023\u0062\u006C\u006F\u0067\u0061\u007A\u0069\u006E\u0065\u002D\u0070\u007
     <div class='mobile-search'>
       <form class='search-form' expr:action='data:blog.searchUrl' role='search'>
         <input autocomplete='off' class='search-input' expr:placeholder='data:messages.search' name='q' value=''/>
-        <button aria-label='تلاش کریں' class='search-action' type='submit' value=''/>
+        <button class='search-action' type='submit' value=''/>
       </form>
     </div>
     <span class='hide-blogazine-pro-mobile-menu'/>
